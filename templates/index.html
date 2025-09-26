@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Reported Cases</h2>
+{% for r in requests %}
+<div>
+    <p><b>{{ r.name }}</b> - {{ r.phone }} - {{ r.location }}</p>
+    <p>{{ r.description }}</p>
+    {% if r.image %}
+    <img src="{{ url_for('static', filename='uploads/' ~ r.image) }}" width="200">
+    {% endif %}
+</div>
+<hr>
+{% else %}
+<p>No rescue requests yet.</p>
+{% endfor %}
+{% endblock %}

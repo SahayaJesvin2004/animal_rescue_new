@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Rescue</title>
+</head>
+<body>
+    <h1>Animal Rescue Portal</h1>
+    <a href="{{ url_for('index') }}">Home</a> | 
+    <a href="{{ url_for('rescue') }}">Report Rescue</a>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
